@@ -29,7 +29,21 @@ if(message.member.roles.cache.has("860283585596751872")) {
 }
 
 // Role boosts
+if(message.member.roles.cache.has("843624639258689538")) {
+  db.set(`boost_${message.author.id}`,1.5)
+} else {
+  // Do nothing ofc
+}
+
+// Role boosts
 if(message.member.roles.cache.has("860283924542652447")) {
+  db.set(`boost_${message.author.id}`,2)
+} else {
+  // Do nothing ofc
+}
+
+// Role boosts
+if(message.member.roles.cache.has("843946873512525824")) {
   db.set(`boost_${message.author.id}`,2)
 } else {
   // Do nothing ofc
