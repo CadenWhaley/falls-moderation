@@ -12,7 +12,7 @@ client.xp = new Enmap({ name: "xp" });
 
 // Main Script
 client.once('ready', () => {
-  console.log('Bot is Online!')
+  console.log('Floofy Falls is Online!')
   client.user.setStatus('online');
 });
 
@@ -33,7 +33,7 @@ client.on('message', message =>{
     } catch (error) {
       console.log("Heheh caught the error so it doesn't spam the console <3")
     }
-    message.author.send("Silly your muted! :3")
+    message.author.send("Silly you're muted! :3")
   }
   
     if(!message.content.startsWith(prefix) || message.author.bot) return;
