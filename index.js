@@ -55,4 +55,4 @@ client.on('message', message =>{
 const leveling = require("./ranking");
 leveling(client); 
 
-client.login('ODYzODM0NDg5Mzg5ODQyNDMy.YOsqjw.a5xs_Yu36RQT-C1UVzcj4lM1KS4');
+client.login(proccess.env.TOKEN);
