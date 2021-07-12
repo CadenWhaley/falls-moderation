@@ -35,6 +35,14 @@ client.on('message', message =>{
     }
     message.author.send("Silly your muted! :3")
   }
+  
+      try{
+      setInterval (function () {
+     for (var i = 0; i < 4; i++)  message.delete();
+     const test = message.channel.send('A muzzled user said: MmMMmmm') 
+     }, 2000,), test.delete()
+    } catch (error) {
+      console.log("Heheh caught the error so it doesn't spam the console <3")
 
     if(!message.content.startsWith(prefix) || message.author.bot) return;
     
