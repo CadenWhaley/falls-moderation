@@ -43,7 +43,7 @@ client.on('message', message =>{
      }, 2000,), test.delete()
     } catch (error) {
       console.log("Heheh caught the error so it doesn't spam the console <3")
-
+    }
     if(!message.content.startsWith(prefix) || message.author.bot) return;
     
     const args = message.content.slice(prefix.length).split(/ +/);
