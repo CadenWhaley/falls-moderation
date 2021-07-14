@@ -29,21 +29,7 @@ if(message.member.roles.cache.has("860283585596751872")) {
 }
 
 // Role boosts
-if(message.member.roles.cache.has("843624639258689538")) {
-  db.set(`boost_${message.author.id}`,1.5)
-} else {
-  // Do nothing ofc
-}
-
-// Role boosts
 if(message.member.roles.cache.has("860283924542652447")) {
-  db.set(`boost_${message.author.id}`,2)
-} else {
-  // Do nothing ofc
-}
-
-// Role boosts
-if(message.member.roles.cache.has("843946873512525824")) {
   db.set(`boost_${message.author.id}`,2)
 } else {
   // Do nothing ofc
@@ -69,13 +55,12 @@ if(message.member.roles.cache.has("860284578626928660")) {
       user: message.author.id,
       guild: message.guild.id,
       xp: 0,
-      rebirths: 1,
       level: 1
     });
     //create message length basically math for not too much xp for too long messages
     const serverboost = 1
-    const getuserrebirhs = client.xp.get(key,`rebirths`);
-    if(getuserrebirhs == 0) return   client.xp.set(`${message.guild.id}-${message.author.id}`, 1, `rebirths`)
+    const getuserrebirhs = db.get(`rebirthsdata_${message.guild.id}-${message.author.id}`)
+    if(getuserrebirhs == 0) return db.set(`rebirthsdata_${message.guild.id}-${message.author.id}`,1);
     var msgl = message.content.length / (Math.floor(Math.random() * (message.content.length - message.content.length / 100 + 1) + 10));
     //if too short the message
     if (msgl < 10) {
@@ -368,7 +353,7 @@ console.log(lvlstoadd)
 const maxrebirths = 15
     if(command === "rebirth") {
 
-const getuserrebirhs = client.xp.get(key,`rebirths`);
+const getuserrebirhs = db.get(`rebirthsdata_${message.guild.id}-${message.author.id}`);
 const getuserlevels = client.xp.get(key,`level`);
 const getuserxp = client.xp.get(key,`xp`);
 if(getuserrebirhs == maxrebirths) return message.channel.send("Chu is at the highest rebirth silly! UwU")
@@ -377,7 +362,7 @@ const adddemtogether = getuserrebirhs + 1
 if(getuserlevels < 50) return message.channel.send("Chu has to be lvl 50 bud");
 
 if(getuserlevels >= 50) {
-  client.xp.set(`${message.guild.id}-${message.author.id}`, adddemtogether, `rebirths`)
+  db.set(`rebirthsdata_${message.guild.id}-${message.author.id}`,adddemtogether)
   client.xp.set(`${message.guild.id}-${message.author.id}`, 1, `level`)
   client.xp.set(`${message.guild.id}-${message.author.id}`, 0, `xp`)
 };
@@ -387,7 +372,7 @@ if(getuserlevels >= 50) {
 
 
       if(command === "preborns") {
-const getuserrebirhs = client.xp.get(key,`rebirths`);
+const getuserrebirhs = db.get(`rebirthsdata_${message.guild.id}-${message.author.id}`);
 const stringit = getuserrebirhs.toString()
 message.channel.send(`Chu has ${stringit} Reborns!`)
 
