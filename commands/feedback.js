@@ -10,7 +10,7 @@ module.exports = {
       firstQuestion: "**How long have you been a Member of Floofy Falls?**",
       secondQuestion: "**On a scale of 1-5, how has your experience been?**",
       thirdQuestion: "**On a scale of 1-5, how confident/comfortable are you coming to staff for help/assistance? **",
-      fourthquestion: "**A User just spammed and they were warned by another staff member already. What should you do?**",
+      fourthquestion: "**What are your current thoughts on the state of the server? **",
       fifthquestion: "**If you could change one thing about Floofy Falls, what would it be, and why?**",
       sixthquestion: "**In your own words, explain one thing the staff can improve on.**",
     }
