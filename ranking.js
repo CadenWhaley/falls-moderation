@@ -58,7 +58,7 @@ if(message.member.roles.cache.has("860284578626928660")) {
       level: 1
     });
     //create message length basically math for not too much xp for too long messages
-    const serverboost = 5
+    const serverboost = 23
     const getuserrebirhs = db.get(`rebirthsdata_${message.guild.id}-${message.author.id}`)
     if(getuserrebirhs == 0) return db.set(`rebirthsdata_${message.guild.id}-${message.author.id}`,1);
     var msgl = message.content.length / (Math.floor(Math.random() * (message.content.length - message.content.length / 100 + 1) + 10));
