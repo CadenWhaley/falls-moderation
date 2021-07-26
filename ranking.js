@@ -36,6 +36,14 @@ if(message.member.roles.cache.has("860283924542652447")) {
 }
 
 // Role boosts
+if(message.member.roles.cache.has("849269752713969714")) {
+  db.set(`boost_${message.author.id}`,2)
+} else {
+  // Do nothing ofc
+}
+
+
+// Role boosts
 if(message.member.roles.cache.has("860284218923155517")) {
   db.set(`boost_${message.author.id}`,3)
 } else {
@@ -58,7 +66,7 @@ if(message.member.roles.cache.has("860284578626928660")) {
       level: 1
     });
     //create message length basically math for not too much xp for too long messages
-    const serverboost = 23
+    const serverboost = 1
     const getuserrebirhs = db.get(`rebirthsdata_${message.guild.id}-${message.author.id}`)
     if(getuserrebirhs == 0) return db.set(`rebirthsdata_${message.guild.id}-${message.author.id}`,1);
     var msgl = message.content.length / (Math.floor(Math.random() * (message.content.length - message.content.length / 100 + 1) + 10));
