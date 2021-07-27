@@ -12,7 +12,7 @@ module.exports = {
             "tts": false,
             "embed": {
               "type": "rich",
-              "title": `ee`,
+              "title": `Testsasda`,
               "description": "",
               "color": 0x00FFFF
             }
