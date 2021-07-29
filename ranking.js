@@ -88,7 +88,7 @@ if(message.member.roles.cache.has("860284578626928660")) {
       client.xp.inc(key, `xp`);
     }
     //get current level
-    const curLevel = Math.floor(Math.sqrt(client.xp.get(key, `xp`)));
+    const curLevel = Math.floor(0.1 * Math.sqrt(client.xp.get(key, `xp`)));
     //if its a new level then do this
     if (client.xp.get(key, `level`) < curLevel) {
       //define ranked embed
@@ -135,7 +135,7 @@ if(message.member.roles.cache.has("860284578626928660")) {
       //math
       let curxp = Number(client.xp.get(key, `xp`).toFixed(2));
       //math
-      let curnextlevel = Number(((Number(1) + Number(client.xp.get(key, `level`).toFixed(2))) * Number(10)) * ((Number(1) + Number(client.xp.get(key, `level`).toFixed(2))) * Number(10)));
+      let curnextlevel = Number(((Number(1) + Number(client.xp.get(key, `level`).toFixed(2))) * Number(10)) * ((Number(1) + Number(client.xp.get(key, `level`).toFixed(1))) * Number(10)));
       //if not level == no rank
       if (client.xp.get(key, `level`) === undefined) i = `No Rank`;
       if (client.xp.get(key, `rebirths`) === undefined) i = `Not Reborn`;
