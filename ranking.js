@@ -88,7 +88,7 @@ if(message.member.roles.cache.has("860284578626928660")) {
       client.xp.inc(key, `xp`);
     }
     //get current level
-    const curLevel = Math.floor(0.1 * Math.sqrt(client.xp.get(key, `xp`)));
+    const curLevel = Math.floor(Math.sqrt(client.xp.get(key, `xp`)));
     //if its a new level then do this
     if (client.xp.get(key, `level`) < curLevel) {
       //define ranked embed
