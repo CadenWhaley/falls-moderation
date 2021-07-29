@@ -135,7 +135,7 @@ if(message.member.roles.cache.has("860284578626928660")) {
       //math
       let curxp = Number(client.xp.get(key, `xp`).toFixed(2));
       //math
-      let curnextlevel = Number(((Number(1) + Number(client.xp.get(key, `level`).toFixed(2))) * Number(10)) * ((Number(1) + Number(client.xp.get(key, `level`).toFixed(1))) * Number(10)));
+      let curnextlevel = Number(((Number(1) + Number(client.xp.get(key, `level`).toFixed(2))) * ((Number(1) + Number(client.xp.get(key, `level`).toFixed(2))) * Number(10)));
       //if not level == no rank
       if (client.xp.get(key, `level`) === undefined) i = `No Rank`;
       if (client.xp.get(key, `rebirths`) === undefined) i = `Not Reborn`;
